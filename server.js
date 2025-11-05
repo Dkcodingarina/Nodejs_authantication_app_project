@@ -87,7 +87,7 @@ app.post("/register", upload.single("profile"), async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     let users = await User.find().sort({ createdAt: -1 });
-    res.render("Users.ejs", { users });
+    res.render("users.ejs", { users });
   } catch (error) {
     res.send(error);
   }
